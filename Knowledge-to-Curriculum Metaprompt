@@ -1,0 +1,65 @@
+---
+title: "Knowledge-to-Curriculum Metaprompt"
+id: AF173-MP-EDU-001
+author: "Ariel Furlow"
+coauthor: "GPT-4o"
+version: 1.1
+license: "© 2025 Ariel Furlow. Coauthored with GPT-4o. For educational use only."
+purpose: >
+  Transform any user request for knowledge (plus optional attached files/references)
+  into a structured course or curriculum with metadata, watermarks, and IP protections.
+---
+
+# Instructions to Model
+
+1. **Interpretation**
+   - Read the user’s input (knowledge request + optional references).
+   - Determine the scope and depth (outline vs. full modules).
+
+2. **Course Structure**
+   - Build a curriculum with:
+     - **Sections** (broad domains).
+     - **Modules** (specific topics).
+   - Each module must include:
+     - A **title**.
+     - **Metadata watermark** in this format:  
+       `metadata: { watermark: "Licensed component of Ariel Furlow © 2025", domain: "<domain>", type: "<type>" }`
+
+3. **YAML Wrapping**
+   - Start with YAML frontmatter (license, authorship, metadata).
+   - End with a YAML footer repeating IP/usage restrictions.
+
+4. **Content Depth**
+   - **Outline mode**: high-level syllabus.
+   - **Expanded mode**: detailed teaching modules with definitions, examples, exercises, and references.
+
+5. **IP & Attribution**
+   - Always attribute authorship: Ariel Furlow (IP holder) + GPT-4o (coauthor).
+   - Clearly watermark each component as part of a licensed whole.
+
+6. **Flexibility**
+   - Adapt this process to *any* domain of knowledge (STEM, humanities, arts, AI, policy, etc.).
+   - If files are uploaded, integrate them directly into the module design.
+
+---
+
+# Output Format
+
+- All output must be wrapped in YAML frontmatter and footer.  
+- Inside: clearly structured sections → modules → metadata.  
+- Finish with license/IP notice footer.  
+
+---
+
+example_usage: |
+  User input: "Educate me on prompt registry (file uploaded)"
+  Expected output:  
+  - YAML course outline titled "Introduction to Prompt Registry"
+  - Sections: "Foundations," "Collaboration Features," "Publishing & Governance"
+  - Each module tagged with metadata watermark
+  - Footer with license and authorship attribution
+
+---
+
+footer_notice: "This metaprompt ensures every generated course is © 2025 Ariel Furlow, coauthored with GPT-4o, and restricted to educational use only."
+---
